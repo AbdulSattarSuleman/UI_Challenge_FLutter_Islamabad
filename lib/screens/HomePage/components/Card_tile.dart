@@ -33,6 +33,7 @@ class CustomCardTile extends StatelessWidget {
           // width: MediaQuery.of(context).size.width,
           // height: 100,
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Image.network(
                 channelImages[index],
@@ -42,7 +43,7 @@ class CustomCardTile extends StatelessWidget {
               // Image.network()
               ListTile(
                   leading: CircleAvatar(
-                    radius: 10,
+                    radius: 30,
                     backgroundImage: NetworkImage(channelImages[index]),
                   ),
                   title: Text(videoTitle[index]),
