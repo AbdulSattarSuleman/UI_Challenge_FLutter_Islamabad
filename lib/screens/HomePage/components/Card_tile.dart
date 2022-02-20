@@ -28,11 +28,26 @@ class CustomCardTile extends StatelessWidget {
     return ListView.builder(
       itemCount: videoSubTitle.length,
       itemBuilder: (context, index) {
-        return Container(
-          width: MediaQuery.of(context).size.width,
-          height: 100,
+        return Card(
+          // margin: EdgeInsets.zero,
+          // width: MediaQuery.of(context).size.width,
+          // height: 100,
           child: Column(
-            children: [Image.network(channelImages[index])],
+            children: [
+              Image.network(
+                channelImages[index],
+                width: double.infinity,
+                fit: BoxFit.contain,
+              ),
+              // Image.network()
+              ListTile(
+                  leading: CircleAvatar(
+                    radius: 10,
+                    backgroundImage: NetworkImage(channelImages[index]),
+                  ),
+                  title: Text(videoTitle[index]),
+                  subtitle: Text(videoSubTitle[index]))
+            ],
           ),
         );
       },
